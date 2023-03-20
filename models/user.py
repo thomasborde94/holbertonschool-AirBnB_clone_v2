@@ -1,11 +1,12 @@
 #!/usr/bin/python3
 """This module defines a class User"""
-from models.base_model import BaseModel
+from models.base_model import BaseModel, Base
 from sqlalchemy import Column, String
 from sqlalchemy.orm import relationship
 from sqlalchemy import ForeignKey
 
-class User(BaseModel):
+
+class User(BaseModel, Base):
     """indiquer le nom de la table dans laquelle les
     instances de la classe seront stockées"""
     __tablename__ = "users"
