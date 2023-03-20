@@ -9,12 +9,12 @@ class FileStorage:
     __objects = {}
 
     def all(self, cls=None):
-    """
-    Retourne un dictionnaire contenant tous les modèles stockés dans le fichier.
-    Si un argument cls est donné, retourne uniquement les modèles qui correspondent
-    à la classe spécifiée.
-    """
-    # créer un dictionnaire vide pour stocker les objets de cette classe
+        """
+        Retourne un dictionnaire contenant tous les modèles stockés dans le fichier.
+        Si un argument cls est donné, retourne uniquement les modèles qui correspondent
+        à la classe spécifiée.
+        """
+        # créer un dictionnaire vide pour stocker les objets de cette classe
         if cls is not None:
             objects_by_cls = {}
             # Parcourir objets stockés
