@@ -133,19 +133,19 @@ class HBNBCommand(cmd.Cmd):
                 if newList[1][0] == '"':
                     newList[1] = newList[1].strip('"')
                     newList[1] = newList[1].replace("_", " ")
-                """ Cas où la valeur est un float"""
+
+                # Cas où la valeur est un float
                 elif "." in newList[1]:
                     newList[1] = float(newList[1])
-                """ Cas où la valeur est un int"""
+                # Cas où la valeur est un int
                 else:
                     newList[1] = int(newList[1])
 
                 """ On attribue la valeur à la clé"""
                 setattr(new_instance, newList[0], newList[1])
-            ## except
-        """
-        create State name="Arizona" id=65
-        """
+            except Exception:
+                continue
+
         storage.save()
         print(new_instance.id)
         storage.save()
