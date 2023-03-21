@@ -14,5 +14,6 @@ class User(BaseModel, Base):
     password = Column(String(128), nullable=False)
     first_name = Column(String(128), nullable=True)
     last_name = Column(String(128), nullable=True)
-    places = relationship('Place', cascade='all, delete', backref='user')
+                                # Permet également de supprimer les objets enfants
+    places = relationship('Place', cascade='all, delete-orphan', backref='user')
     reviews = relationship('Review', cascade='all, delete', backref='user')
