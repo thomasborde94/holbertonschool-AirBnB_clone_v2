@@ -25,7 +25,7 @@ def ctext(text):
     return "C {}".format(text)
 
 
-@app.route('/python', defaults={'text': "is cool"}
+@app.route('/python', defaults={'text': "is cool"}, strict_slashes=False)
 @app.route('/python/<text>', strict_slashes=False)
 def pythontext(text):
     """Displays C followed with value of text"""
