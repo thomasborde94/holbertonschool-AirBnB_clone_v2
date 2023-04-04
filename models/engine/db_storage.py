@@ -32,6 +32,7 @@ class DBStorage():
         if getenv("HBNB_ENV") == "test":
             Base.metadata.drop_all(self.__engine)
 
+
     def all(self, cls=None):
         """tries to find all instances of a class name"""
         allClass = [City, State, User, Place, Review, Amenity]
@@ -70,3 +71,7 @@ class DBStorage():
 
         Session = scoped_session(session_factory)
         self.__session = Session()
+
+    def close(self):
+        """call remove() method on the private session attribute"""
+        self.__session.close()
