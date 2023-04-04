@@ -32,13 +32,12 @@ class DBStorage():
         if getenv("HBNB_ENV") == "test":
             Base.metadata.drop_all(self.__engine)
 
-
     def all(self, cls=None):
         """tries to find all instances of a class name"""
         allClass = [City, State, User, Place, Review, Amenity]
         instanceList = []
         dictionary = {}
-        
+
         if cls is None:
             for i in range(len(allClass)):
                 instanceList += self.__session.query(allClass[i]).all()
